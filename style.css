@@ -1,0 +1,211 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffcce7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px #dab6fc, 0 0 20px #dab6fc;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Questions & Answers */
+.question-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: slide-up 0.5s ease-out;
+}
+
+.question-card h2 {
+    color: #8a2be2;
+    margin-bottom: 15px;
+}
+
+.answer-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #dab6fc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.answer-input:focus {
+    outline: none;
+    border-color: #8a2be2;
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
+}
+
+.submit-btn {
+    background-color: #dab6fc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #8a2be2;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+.answers-list {
+    margin-top: 20px;
+}
+
+.answer-item {
+    background: #fdf5ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    animation: fade-in 0.5s ease;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #dab6fc, 0 0 20px #dab6fc; }
+    to { text-shadow: 0 0 20px #ffcce7, 0 0 30px #ffcce7; }
+}
+
+/* Petal Animation */
+.petal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.petal {
+    position: absolute;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C-20 20, -20 80, 50 100 C120 80, 120 20, 50 0 Z" fill="%23FFB6C1"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+/* Admin Page Styling */
+.admin-login, .admin-dashboard {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.admin-login h2, .admin-dashboard h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.admin-login input, .admin-dashboard input, .admin-dashboard textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.admin-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+    background-color: #dab6fc;
+}
+
+#answers-admin-list, #questions-admin-list {
+    list-style: none;
+    padding: 0;
+}
+
+#answers-admin-list li, #questions-admin-list li {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+}
