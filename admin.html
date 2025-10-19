@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - YourStory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #dab6fc;">
+    <div class="petal-container"></div>
+    <div id="login-section" class="admin-login">
+        <h2>Admin Login</h2>
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn" class="admin-btn">Login</button>
+    </div>
+
+    <div id="dashboard-section" class="admin-dashboard" style="display: none;">
+        <h2>Admin Dashboard</h2>
+
+        <!-- Add/Edit Question -->
+        <div id="add-question-form">
+            <h3>Add New Question</h3>
+            <textarea id="new-question-text" placeholder="Enter a new question"></textarea>
+            <button id="add-question-btn" class="admin-btn">Add Question</button>
+        </div>
+
+        <!-- Manage Questions -->
+        <h3>Manage Questions</h3>
+        <ul id="questions-admin-list">
+            <!-- Questions will be loaded here -->
+        </ul>
+        
+        <!-- View Answers -->
+        <h3>All Answers</h3>
+        <ul id="answers-admin-list">
+            <!-- Answers will be loaded here -->
+        </ul>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="firebase.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
